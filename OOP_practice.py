@@ -1,4 +1,13 @@
+class Pets:
 
+    def __init__(self):
+        pass
+    petlist = []
+    def addpet(self,pet):
+        self.petlist.append(pet)
+    
+    def listpets(self):
+        print "I have {} pets".format(len(self.petlist))
 
 class Dog:
 
@@ -21,7 +30,6 @@ class Dog:
     def speak(self, sound):
         return "{} says {}".format(self.name, sound)
 
-
 #then we can create child classes, that inherit everything from the dog class, but can extend or overwrite certain properties
 class Pug(Dog):
     def chuff(self, num):
@@ -31,9 +39,17 @@ class Aussie(Dog):
     def run(self, speed):
         return "{} runs at {} miles per hour".format(self.name,speed)
 
+mypets = Pets()
+
+
 ava = Aussie("Ava",3)
 
 lou = Pug("Lou",1)
+
+mypets.addpet(ava)
+mypets.addpet(lou)
+mypets.listpets()
+'''
 print(lou.chuff(3))
 print(ava.run(10))
 print(ava.name, ava.age)
@@ -43,7 +59,7 @@ print(ava.species)
 print(isinstance(ava,Dog))
 print(isinstance(lou,Dog))
 print(isinstance(lou,Pug))
-print(isinstance(lou,Aussie))
+print(isinstance(lou,Aussie)) #it works!
 
 #print(ava.description())
-#print(ava.speak('woof woof'))
+#print(ava.speak('woof woof'))'''
