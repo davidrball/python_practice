@@ -22,10 +22,28 @@ class Dog:
         return "{} says {}".format(self.name, sound)
 
 
-ava = Dog("Ava",3)
+#then we can create child classes, that inherit everything from the dog class, but can extend or overwrite certain properties
+class Pug(Dog):
+    def chuff(self, num):
+        return "{} chuffs {} times".format(self.name,num)
 
+class Aussie(Dog):
+    def run(self, speed):
+        return "{} runs at {} miles per hour".format(self.name,speed)
+
+ava = Aussie("Ava",3)
+
+lou = Pug("Lou",1)
+print(lou.chuff(3))
+print(ava.run(10))
 print(ava.name, ava.age)
 print(ava.species)
 
-print(ava.description())
-print(ava.speak('woof woof'))
+#can check if different objects are an instance of a class
+print(isinstance(ava,Dog))
+print(isinstance(lou,Dog))
+print(isinstance(lou,Pug))
+print(isinstance(lou,Aussie))
+
+#print(ava.description())
+#print(ava.speak('woof woof'))
